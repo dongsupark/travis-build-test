@@ -9,8 +9,8 @@ func test1() {
 	expected := 17
 	actual := 17
 
-	res := testValues(expected, actual)
-	if !res {
+	res, err := testValues(expected, actual)
+	if !res || err != nil {
 		fmt.Printf("mismatch! expected=%d, actual=%d\n", expected, actual)
 		os.Exit(1)
 	}
